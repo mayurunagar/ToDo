@@ -1,0 +1,25 @@
+<div style="overflow: hidden">
+  <div class="row d-flex justify-content-center align-middle">
+    <div class="card w-50 m-5">
+      <div class="card-header">
+        Login
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="mb-3">
+            <label for="userName" class="form-label">UserName</label>
+            <input type="text" class="form-control" name="userName" [(ngModel)]="userName" required autofocus />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="password" required />
+          </div>
+          <div class="mb-3" *ngIf="incorrect">
+            <p style="color:red">Incorrect username or password!</p>
+          </div>
+          <button [disabled]="userName == '' || password == ''" type="submit" class="btn btn-primary" (click)="login()">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div style="overflow: hidden">
+  <div class="row d-flex justify-content-center align-middle">
+    <div class="card w-50 m-5">
+      <div class="card-header">
+        Register
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="email" required autofocus />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="password" required />
+          </div>
+          <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" name="confirmPassword" [(ngModel)]="confirmPassword" required />
+          </div>
+          <button [disabled]="((!email || email == '') || (!password || password == '') || (!confirmPassword || confirmPassword == '') || password != confirmPassword)" type="submit" class="btn btn-primary" (click)="register()">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
